@@ -290,6 +290,52 @@ footer { background: #0f0f0f; color: var(--white); padding: 40px 0 20px; }
     .main-nav { flex-wrap: wrap; }
     .afrishop-logo { order: 1; }
     .hamburger { order: 2; margin-left: auto; }
+    .hero { 
+        padding: 10px; 
+    }
+    .hero-inner { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 280px; 
+        min-height: auto; 
+    }
+    .hero-text { 
+        padding: 20px 15px; 
+        order: 1;
+    }
+    .hero-slider-wrap { 
+        border-radius: 0 0 12px 12px; 
+        order: 2;
+        min-height: 280px;
+    }
+    .advert-slider { 
+        min-height: 280px;
+    }
+    .slide { 
+        position: absolute;
+        inset: 0;
+    }
+    /* Mobile: Images display fully without cropping */
+    .slide img { 
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    .slider-controls button { 
+        width: 32px; 
+        height: 32px; 
+        font-size: 12px;
+    }
+    .slider-dots { 
+        bottom: 10px;
+    }
+    .slider-dot { 
+        width: 6px; 
+        height: 6px;
+    }
+    .slider-dot.active { 
+        width: 18px;
+    }
 }
 
 @media (max-width: 640px) {
@@ -321,8 +367,20 @@ footer { background: #0f0f0f; color: var(--white); padding: 40px 0 20px; }
     .fab-cart-container { width: 290px; right: -10px; }
     .hero-text h1 { font-size: 24px; }
     .hero-inner { grid-template-rows: auto 180px; }
-    .hero-slider-wrap { height: 180px; }
+    
     .category-card img { height: 140px; }
+    .hero-inner { 
+        grid-template-rows: auto 200px; 
+    }
+    .hero-slider-wrap { 
+        min-height: 200px;
+    }
+    .advert-slider { 
+        min-height: 200px;
+    }
+    .slide img { 
+        object-fit: contain;
+    }
 }
 
 @media (max-width: 380px) {
@@ -332,4 +390,279 @@ footer { background: #0f0f0f; color: var(--white); padding: 40px 0 20px; }
     .main-nav { padding: 8px 12px; }
     .afrishop-logo { font-size: 20px; }
     .search-bar button { padding: 6px 12px; font-size: 10px; }
+    .hero-inner { 
+        grid-template-rows: auto 200px; 
+    }
+    .hero-slider-wrap { 
+        min-height: 200px;
+    }
+    .advert-slider { 
+        min-height: 200px;
+    }
+    .slide img { 
+        object-fit: contain;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+/* ========== HERO SECTION WITH FULL IMAGE DISPLAY ========== */
+.hero { 
+    background: linear-gradient(100deg, #ff8c00, #ff6105, #b81a0a); 
+    padding: 15px; 
+}
+
+.hero-inner { 
+    background: var(--navy); 
+    border-radius: 12px; 
+    overflow: hidden; 
+    display: grid; 
+    grid-template-columns: 180px 1fr 1fr; 
+    min-height: 380px; 
+}
+
+/* Hero Slider Wrap */
+.hero-slider-wrap { 
+    position: relative; 
+    overflow: hidden; 
+    border-radius: 0 12px 12px 0;
+    background: var(--navy);
+}
+
+.advert-slider { 
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+    min-height: 350px;
+}
+
+.slide { 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0; 
+    transition: opacity 0.5s ease-in-out; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    background: var(--navy);
+    overflow: hidden;
+}
+
+.slide.active { 
+    opacity: 1; 
+    z-index: 1;
+}
+
+/* KEY FIX: Images display fully without cropping */
+.slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain;  /* Changed from 'cover' to 'contain' - shows FULL image */
+    object-position: center;
+    display: block;
+}
+
+/* Slide overlay - keep for text readability if needed */
+.slide-overlay { 
+    position: absolute; 
+    inset: 0; 
+    background: linear-gradient(to right, rgba(6, 55, 86, 0.3), rgba(0, 0, 0, 0.1));
+    pointer-events: none;
+}
+
+/* Slider Controls */
+.slider-controls { 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 0; 
+    right: 0; 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 0 10px; 
+    z-index: 20; 
+}
+
+.slider-controls button { 
+    width: 36px; 
+    height: 36px; 
+    background: rgba(0,0,0,0.5); 
+    color: white; 
+    border: none; 
+    border-radius: 50%; 
+    cursor: pointer; 
+    font-size: 14px;
+    backdrop-filter: blur(4px);
+    transition: var(--transition);
+    z-index: 20;
+}
+
+.slider-controls button:hover { 
+    background: var(--primary); 
+    transform: scale(1.1);
+}
+
+/* Slider Dots */
+.slider-dots { 
+    position: absolute; 
+    bottom: 15px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: flex; 
+    gap: 8px; 
+    z-index: 20; 
+}
+
+.slider-dot { 
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    background: rgba(255,255,255,0.5); 
+    cursor: pointer; 
+    border: none;
+    transition: var(--transition);
+    padding: 0;
+}
+
+.slider-dot.active { 
+    background: var(--white); 
+    width: 24px; 
+    border-radius: 4px; 
+}
+
+/* Slide Counter */
+.slide-counter { 
+    position: absolute; 
+    top: 12px; 
+    right: 12px; 
+    background: rgba(0,0,0,0.5); 
+    backdrop-filter: blur(4px);
+    color: white; 
+    font-size: 11px; 
+    font-weight: 600;
+    padding: 4px 10px; 
+    border-radius: 20px; 
+    z-index: 20; 
+}
+
+/* ========== RESPONSIVE - TABLET ========== */
+@media (max-width: 900px) {
+    .hero-inner { 
+        grid-template-columns: 1fr 1fr; 
+    }
+    .category-sidebar { 
+        display: none; 
+    }
+    .advert-slider { 
+        min-height: 320px;
+    }
+    .slide img { 
+        object-fit: contain;
+    }
+}
+
+/* ========== RESPONSIVE - MOBILE (FULL IMAGE DISPLAY) ========== */
+@media (max-width: 768px) {
+    .hero { 
+        padding: 10px; 
+    }
+    .hero-inner { 
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto 280px; 
+        min-height: auto; 
+    }
+    .hero-text { 
+        padding: 20px 15px; 
+        order: 1;
+    }
+    .hero-slider-wrap { 
+        border-radius: 0 0 12px 12px; 
+        order: 2;
+        min-height: 280px;
+    }
+    .advert-slider { 
+        min-height: 280px;
+    }
+    .slide { 
+        position: absolute;
+        inset: 0;
+    }
+    /* Mobile: Images display fully without cropping */
+    .slide img { 
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+    }
+    .slider-controls button { 
+        width: 32px; 
+        height: 32px; 
+        font-size: 12px;
+    }
+    .slider-dots { 
+        bottom: 10px;
+    }
+    .slider-dot { 
+        width: 6px; 
+        height: 6px;
+    }
+    .slider-dot.active { 
+        width: 18px;
+    }
+}
+
+/* ========== RESPONSIVE - SMALL MOBILE ========== */
+@media (max-width: 480px) {
+    .hero-inner { 
+        grid-template-rows: auto 240px; 
+    }
+    .hero-slider-wrap { 
+        min-height: 240px;
+    }
+    .advert-slider { 
+        min-height: 240px;
+    }
+    .slide img { 
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    .hero-text h1 { 
+        font-size: 24px; 
+    }
+    .hero-text .discount-badge .pct { 
+        font-size: 20px; 
+    }
+    .slider-controls button { 
+        width: 28px; 
+        height: 28px; 
+        font-size: 10px;
+    }
+}
+
+/* ========== RESPONSIVE - EXTRA SMALL ========== */
+@media (max-width: 380px) {
+    .hero-inner { 
+        grid-template-rows: auto 200px; 
+    }
+    .hero-slider-wrap { 
+        min-height: 200px;
+    }
+    .advert-slider { 
+        min-height: 200px;
+    }
+    .slide img { 
+        object-fit: contain;
+    }
 }
