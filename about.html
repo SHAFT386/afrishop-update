@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>About Us - Afrishop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #063856, #042840);
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+        .about-hero h1 { font-size: 2.5rem; margin-bottom: 15px; font-family: 'Bebas Neue', sans-serif; }
+        .about-hero p { font-size: 1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+        .about-content-page { padding: 60px 0; background: var(--white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+        .about-text-page h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 20px; }
+        .about-text-page p { color: var(--gray-700); line-height: 1.8; margin-bottom: 20px; }
+        .about-text-page h3 { color: var(--navy); margin: 25px 0 15px; font-size: 1.3rem; }
+        .about-text-page ul { list-style: none; margin: 15px 0; }
+        .about-text-page ul li { padding: 8px 0 8px 25px; position: relative; color: var(--gray-700); }
+        .about-text-page ul li:before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+        .about-image-page img { width: 100%; border-radius: 15px; box-shadow: var(--shadow-md); }
+        .values-section { background: var(--gray-100); padding: 60px 0; }
+        .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px; }
+        .value-card { text-align: center; padding: 30px; background: white; border-radius: 15px; box-shadow: var(--shadow-sm); transition: var(--transition); }
+        .value-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+        .value-card i { font-size: 40px; color: var(--primary); margin-bottom: 15px; }
+        .value-card h4 { font-size: 1.2rem; margin-bottom: 10px; color: var(--navy); }
+        .value-card p { color: var(--gray-600); font-size: 0.9rem; }
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Mobile Menu Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Mobile Drawer -->
+<nav class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-header">
+    <a class="afrishop-logo" href="index.html">AFRI<span>SHOP</span></a>
+    <button class="mobile-close" id="closeMobileBtn"><i class="fas fa-times"></i></button>
+  
+    </div>
+  <div class="cat-item"><a href="category.html?cat=electronics"><i class="fas fa-bolt"></i> Electronics</a></div>
+  <div class="cat-item"><a href="category.html?cat=home"><i class="fas fa-home"></i> Home & Kitchen</a></div>
+  <div class="cat-item"><a href="category.html?cat=fashion"><i class="fas fa-tshirt"></i> Fashion</a></div>
+  <div class="cat-item"><a href="category.html?cat=beauty"><i class="fas fa-heartbeat"></i> Beauty & Health</a></div>
+  <div class="cat-item"><a href="category.html?cat=sports"><i class="fas fa-running"></i> Sports & Outdoors</a></div>
+  <div class="cat-item"><a href="category.html?cat=toys"><i class="fas fa-gamepad"></i> Toys & Games</a></div>
+  <div class="cat-item"><a href="contact.html"><i class="fas fa-envelope"></i> Contact Us</a></div>
+   <div class="cat-item"><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></div></nav>
+
+<!-- Promo Bar -->
+<div class="promo-bar">
+  <span><i class="fas fa-truck"></i> Fast delivery</span>
+  <span class="accent">|</span>
+  <span><i class="fas fa-tag"></i> <span class="accent">FLASH SALE</span> – Today Only!</span>
+  <span class="accent">|</span>
+  <span><i class="fas fa-shield-alt"></i> 100% Secure Checkout</span>
+</div>
+
+<!-- Deal Banner -->
+<div class="deal-banner">
+  <div class="brand-badge">
+    <span class="mega">Mega</span>
+    <span class="home-tag">HOME</span>
+    <span class="savings">Savings</span>
+  </div>
+  <span class="today"><i class="far fa-clock"></i> TODAY ONLY</span>
+  <a href="#" class="shop-now-link">SHOP NOW <i class="fas fa-chevron-right"></i></a>
+  <div class="call-box">
+    <p>📞 Call for Deals</p>
+    <p class="phone">+256 705 934 559</p>
+  </div>
+</div>
+
+<!-- Brand Bar -->
+<div class="brand-bar">
+  <span class="best-deals">Get Best <span>Deals</span></span>
+  <span class="afrishop-logo-sm">AFRI<span>SHOP</span></span>
+  <span class="we-deliver"><i class="fas fa-truck"></i> We Deliver</span>
+  <div class="icon-group">
+    <button class="icon-btn" title="Wishlist"><i class="far fa-heart"></i><span class="badge">3</span></button>
+    <button class="icon-btn" title="Account"><i class="far fa-user"></i></button>
+    <a href="cart.html" class="icon-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span id="cart-count">0</span></a>
+    <span class="shop-now-sm">SHOP NOW</span>
+  </div>
+</div>
+
+<!-- Main Nav -->
+<header class="main-nav">
+  <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a class="afrishop-logo" href="index.html">AFRI<span>SHOP</span></a>
+  <div class="search-bar">
+    <input type="text" placeholder="Search products..." id="searchInput" onkeydown="if(event.key==='Enter')doSearch()">
+    <button onclick="doSearch()"><i class="fas fa-search"></i> Search</button>
+  </div>
+  <nav class="nav-links">
+    <div class="dropdown-wrapper">
+      <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
+      <ul class="dropdown">
+        <li><a href="category.html?cat=electronics">Electronics</a></li>
+        <li><a href="category.html?cat=fashion">Fashion</a></li>
+        <li><a href="category.html?cat=home">Home & Kitchen</a></li>
+        <li><a href="category.html?cat=beauty">Beauty & Health</a></li>
+        <li><a href="category.html?cat=sports">Sports & Outdoors</a></li>
+        <li><a href="category.html?cat=toys">Toys & Games</a></li>
+      </ul>
+    </div>
+    <a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> <span>About</span></a>
+    <a href="contact.html" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a>
+    <a href="cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> <span>Cart</span><span id="cart-count-nav">0</span></a>
+  </nav>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-bar"><a href="index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>About Us</span></div>
+
+<!-- About Hero -->
+<section class="about-hero">
+  <h1>About Afrishop</h1>
+  <p>Your trusted online shopping destination in Uganda</p>
+</section>
+
+<!-- About Content -->
+<section class="about-content-page">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text-page">
+        <h2>Your Trusted Online Shopping Destination</h2>
+        <p>Afrishop is your one-stop online store for quality products at affordable prices. We bring you the best from across Africa and beyond, offering a wide range of products including electronics, fashion, home goods, beauty products, sports equipment, and toys.</p>
+        <p>Founded in 2023, our mission is to make online shopping accessible and convenient for everyone in Uganda and across East Africa. We pride ourselves on our excellent customer service, fast delivery, and genuine products.</p>
+        <h3>Why Choose Afrishop?</h3>
+        <ul>
+          <li>Wide selection of quality products</li>
+          <li>Competitive prices with regular discounts</li>
+          <li>Secure payment options</li>
+          <li>Fast and reliable delivery</li>
+          <li>Excellent customer support</li>
+          <li>Easy returns and refunds policy</li>
+        </ul>
+      </div>
+      <div class="about-image-page">
+        <img src="images/about.jpg" alt="About Afrishop" onerror="this.src='https://placehold.co/600x400/ff6600/white?text=Afrishop'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section">
+  <div class="container">
+    <h2 style="text-align: center; color: var(--navy); margin-bottom: 20px;">Our Core Values</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 20px; color: var(--gray-600);">The principles that guide everything we do</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <i class="fas fa-gem"></i>
+        <h4>Quality First</h4>
+        <p>We never compromise on product quality. Every item is carefully selected and verified.</p>
+      </div>
+      <div class="value-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h4>Customer Focus</h4>
+        <p>Your satisfaction is our top priority. We're here to help 24/7.</p>
+      </div>
+      <div class="value-card">
+        <i class="fas fa-shield-alt"></i>
+        <h4>Trust & Transparency</h4>
+        <p>Honest pricing, clear policies, and secure transactions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer><div class="container"><div class="footer-container"><div class="footer-column"><h3>About Afrishop</h3><p>Your one-stop online store for quality products at affordable prices.</p></div><div class="footer-column"><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms & Conditions</a></li></ul></div><div class="footer-column"><h3>Contact Us</h3><p><i class="fas fa-map-marker-alt"></i> Kampala, Uganda</p><p><i class="fas fa-phone"></i> +256 705 934559</p><p><i class="fas fa-envelope"></i> afrishopugbiz@gmail.com</p></div><div class="footer-column"><h3>Follow Us</h3><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-tiktok"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div></div><div class="footer-bottom"><p>&copy; 2025 Afrishop. All Rights Reserved.</p></div></div></footer>
+
+<!-- FAB Container -->
+<div class="fab-container"><div class="fab-main fab-cart"><i class="fas fa-shopping-cart"></i><span class="fab-cart-count">0</span></div><div class="fab-main fab-whatsapp"><i class="fab fa-whatsapp"></i></div><div class="fab-main fab-call"><i class="fas fa-phone"></i></div><div class="fab-cart-container"><div class="fab-cart-header"><h3>Your Cart</h3><button class="fab-cart-close"><i class="fas fa-times"></i></button></div><div class="fab-cart-items"></div><div class="fab-cart-summary"><div class="fab-cart-total"><span>Total:</span><span id="fab-cart-total">UGX 0</span></div><div class="fab-cart-buttons"><a href="cart.html" class="btn">View Cart</a></div></div></div></div>
+
+<script src="js/categories.js"></script>
+<script src="js/products-electronics.js"></script>
+<script src="js/products-fashion.js"></script>
+<script src="js/products-home.js"></script>
+<script src="js/products-beauty.js"></script>
+<script src="js/products-sports.js"></script>
+<script src="js/products-toys.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
